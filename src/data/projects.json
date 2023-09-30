@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "name": "Carrusel De Actores",
+    "img": "cda.png",
+    "stack": ["VueJS","Vuetify","MongoDB","PM2","NodeJS","Express"],
+    "col": "col-span-3",
+    "bg": "bg-gradient-to-r from-gray-500/90 to-gray-600/90"
+  },
+  {
+    "id": 2,
+    "name": "Carrusel De Actores",
+    "img": "cda.png",
+    "stack": ["VueJS","Vuetify","MongoDB","PM2","NodeJS","Express"],
+    "col": "col-span-9",
+    "bg": "bg-gradient-to-r from-sky-500/90 to-indigo-500/90"
+  },
+  {
+    "id": 1,
+    "name": "Carrusel De Actores",
+    "img": "cda.png",
+    "stack": ["VueJS","Vuetify","MongoDB","PM2","NodeJS","Express"],
+    "col": "col-span-6",
+    "bg": "bg-gradient-to-r from-blue-500/90 to-cyan-500/90"
+  },
+  {
+    "id": 1,
+    "name": "Carrusel De Actores",
+    "img": "cda.png",
+    "stack": ["VueJS","Vuetify","MongoDB","PM2","NodeJS","Express"],
+    "col": "col-span-6",
+    "bg": "bg-gradient-to-r from-blue-500/90 to-cyan-500/90"
+  }
+,
+  {
+    "id": 1,
+    "name": "Carrusel De Actores",
+    "img": "cda.png",
+    "stack": ["VueJS","Vuetify","MongoDB","PM2","NodeJS","Express"],
+    "col": "col-span-3",
+    "bg": "bg-gradient-to-r from-blue-500/90 to-cyan-500/90"
+  }
+]
