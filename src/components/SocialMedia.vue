@@ -1,7 +1,7 @@
 <template>
-  <div class="mt-8 flex flex-wrap justify-between">
+  <div class="flex flex-wrap justify-between">
     <template v-for="icon in socialMedia">
-      <a :class="'cursor-pointer hover:text-yellow1 text-white ' + fontSize">
+      <a :class="'cursor-pointer hover:text-gray-500 ' + fontSize">
         <font-awesome-icon
             :icon="icon.icon"
         />

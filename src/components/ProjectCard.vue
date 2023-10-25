@@ -7,7 +7,7 @@
   >
     <div
         :class="bg"
-        class="p-10 rounded shadow-2xl"
+        class="p-10 shadow-2xl"
     >
       <div>
         <img

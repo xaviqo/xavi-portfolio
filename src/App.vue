@@ -1,9 +1,10 @@
 <template>
-<div>
-  <HeadNavbar />
-  <LandingHero />
-  <ProjectsSection />
-</div>
+    <HeadNavbar />
+    <LandingHero />
+    <ProjectsSection />
+  <div class="fixed bg-gradient-to-b bottom-0 from-transparent to-white/40 w-full z-30 h-12">
+
+  </div>
 </template>
 <script>
 import {defineComponent} from "vue";

@@ -25,14 +25,8 @@ export default {
     },
     extend: {
       colors: {
-        'blue3': '#8ecae6',
-        'blue2': '#219ebc',
-        'blue1': '#023047',
-        'green1':'#2a9d8f',
-        'yellow1':'#ffb703',
-        'orange1':'#fb8500',
-        'pink1':'#ff6392',
-        'red1':'#e63946'
+        'graybg':'#e7ecef',
+        'blue1':'#00111a'
       }
     },
   },

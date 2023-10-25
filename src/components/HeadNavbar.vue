@@ -1,42 +1,68 @@
 <template>
   <div
-      class="fixed py-4 px-5 w-full flex justify-between z-50"
-      :class="isScrolled ? 'transition duration-300 bg-gradient-to-r from-blue1/80 to-blue2/80' : 'transition duration-300 bg-transparent'"
+      class="h-[64px]"
   >
     <div
-        class="bg-white text-blue1 py-1 pl-3 pr-2 font-bold lg:text-xl xl:text-2xl"
-        :class="menu.show ? 'shadow-2xl' : ''"
-        style="letter-spacing: 5px"
+        class="fixed py-4 px-5 md:p-6 w-full flex justify-between z-50 "
+        :class="isScrolled ? 'bg-transparent shadow-none' : 'bg-white shadow-sm'"
     >
-      XAVI.TECH
-    </div>
-    <div class="p-1">
-      <button @click="switchMenuShow">
-        <font-awesome-icon
-            class="text-white text-xl lg:text-2xl xl:text-3xl"
-            :icon="menu.show ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
-        />
-      </button>
+      <div
+          class="bg-graybg text-blue1 pl-3 pr-2 xl:pl-5 xl:pr-4 font-bold lg:text-xl xl:text-2xl flex items-center"
+          :class="{
+            'transition duration-800 bg-transparent' : isScrolled,
+            'transition duration-800 bg-graybg shadow-lg' : !isScrolled
+          }"
+          style="letter-spacing: 5px"
+      >
+        <span
+            class="z-50"
+            :class="{
+             'transition duration-800 text-transparent' : isScrolled,
+            'transition duration-800 text-blue1' : !isScrolled
+          }"
+        >
+          XAVI.TECH
+        </span>
+      </div>
+      <div class="bg-graybg p-2 xl:p-3 shadow-lg">
+        <button @click="switchMenuShow">
+          <font-awesome-icon
+              class="text-blue1 text-xl lg:text-2xl xl:text-3xl hover:text-gray-500"
+              :icon="menu.show ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
+          />
+        </button>
+      </div>
     </div>
   </div>
   <nav
-      class="h-screen w-full pt-16 bg-blue1/60 backdrop-blur-sm flex flex-wrap justify-center items-start"
-      :class="menu.show ? 'fixed' : 'hidden'"
+      class="h-screen w-full pt-16 bg-blue1/30 backdrop-blur-sm flex flex-wrap justify-center items-start z-40"
+      :class="menu.show ? 'fixed top-0' : 'hidden'"
   >
-    <ul class="w-full flex flex-col justify-center items-center mt-10">
+    <ul class="w-full flex flex-col justify-center items-center mt-14">
       <li
           v-for="item in menu.items"
-          class="mt-4 py-2 border-b border-solid border-gray-400 w-1/2 md:w-1/3 lg:w-2/5 text-center"
+          class="mt-6 w-1/2 md:w-1/6 text-center shadow-md"
       >
-        <span class="text-white font-bold cursor-pointer py-1 px-3 transition duration-500 hover:bg-white hover:text-blue1 md:text-xl lg:text-2xl " style="letter-spacing: 5px">
+        <div class="font-bold cursor-pointer w-full py-1 px-3 transition duration-500 bg-white/70 hover:bg-white hover:text-blue1 md:text-xl lg:text-2xl shadow-2xl" style="letter-spacing: 5px">
           {{ item.name.toUpperCase() }}
-        </span>
+        </div>
       </li>
     </ul>
-    <div class="w-[200px]">
+    <div class="bg-white/70 p-4 w-1/2 md:w-1/3 lg:w-1/5 shadow-md">
       <SocialMedia font-size="text-3xl" />
     </div>
   </nav>
+  <div class="w-full flex justify-center z-50">
+    <div
+        :class="isScrolled ? 'hidden' : 'hidden xl:inline xl:fixed bottom-0 mb-8'"
+    >
+      <div>
+        <button class="animate-bounce border border-gray-800 hover:border-gray-300 rounded-full p-2">
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
 import SocialMedia from "./SocialMedia.vue";

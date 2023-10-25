@@ -1,36 +1,43 @@
 <template>
-  <section
-      class="md:p-8 xl:p-10 2xl:p-16 bg-gradient-to-r from-blue1 to-blue2 items-center grid grid-cols-2 text-white min-h-[60vh] md:min-h-[55vh] lg:min-h-0"
-  >
-    <div class="w-full p-6 xl:p-12 col-span-2 md:col-span-1">
-      <div
-          class="tracking-widest"
-      >
-        <div  class="text-3xl lg:text-4xl xl:text-6xl font-bold tracking-wide overflow-hidden">
-          Hi there! I'm Xavi.
+  <div class="flex justify-center flex-wrap h-full bg-gray-50">
+    <main class="lg:container lg:h-[72vh] md:gap-6 2xl:gap-8 lg:items-center p-6 xl:my-16 grid grid-cols-12">
+      <!--hero-->
+      <div class="col-span-12 md:col-span-8 w-full">
+        <div class="lg:pr-6">
+          <div class="tracking-widest">
+            <div  class="mb-4 text-4xl lg:text-5xl 2xl:text-6xl font-bold tracking-wide overflow-hidden">
+              Full Stack - Java & VueJS developer
+            </div>
+            <div class="my-5 md:my-8 border-b-2 border-blue1 w-full" />
+            <div
+                class="mb-4 text-xl md:text-2xl lg:text-3xl font-bold tracking-wide overflow-hidden blink-typing-animation"
+            >
+              Hi there! 👋 <span class="inline">I'm Xavi Quiñones.</span>
+            </div>
+          </div>
+          <p class="mb-6 tracking-wide md:text-xl">
+            I'm a full-stack developer living in Barcelona, Spain, with a strong preference for Vue.js, Spring Boot, and the Linux ecosystem.
+          </p>
+          <div class="max-w-[235px] ">
+            <SocialMedia font-size="text-3xl"/>
+          </div>
+          <!--      <div>
+                  Tech Stack | VueJS, SpringBoot, SQL...
+                </div>-->
         </div>
       </div>
-      <div class="my-2 md:my-3 border-b-2 border-white w-full" />
+      <!--photo-->
       <div
-          class="text-gray-400 text-xl xl:text-2xl italic font-bold tracking-widest overflow-hidden blink-typing-animation"
+          class="hidden md:col-span-4 w-full md:inline shadow-2xl"
       >
-        Full Stack Developer
+        <img
+            src="../assets/me-b.jpg"
+            alt="Xavi Quiñones"
+            class="shadow-2xl object-center object-cover h-full"
+        >
       </div>
-      <p class="mt-8 uppercase font-bold tracking-wide">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad error exercitationem ipsam labore laborum nostrum odit provident quaerat vero.
-      </p>
-      <div class="max-w-[165px]">
-        <SocialMedia font-size="text-2xl"/>
-      </div>
-    </div>
-    <div class="hidden p-16 w-full md:col-span-1 md:flex justify-center">
-      <img
-          src="../assets/me-b.jpg"
-          alt="Xavi Quiñones"
-          class="rounded shadow-2xl max-h-[450px]"
-      >
-    </div>
-  </section>
+    </main>
+  </div>
 </template>
 <script>
 import SocialMedia from "./SocialMedia.vue";
@@ -50,7 +57,7 @@ export default {
 .blink-typing-animation {
   white-space: nowrap;
   overflow: hidden;
-  animation: typing 4s steps(40, end) 1, blink-caret .8s 4;
+  animation: typing 4s steps(40, end) 1, blink-caret .5s 4;
 }
 
 @keyframes typing {
@@ -64,11 +71,11 @@ export default {
 
 @keyframes blink-caret {
   0% {
-    border-color: #ffffff;
-    border-right: 3px solid rgba(255, 255, 255, 0.85);
+    border-color: #00111a;
+    border-right: 3px solid #00111a;
   } 100% {
-    border-color: transparent;
-    border-right: 3px solid rgba(255, 255, 255, 0);
-  }
+      border-color: transparent;
+      border-right: 3px solid rgba(255, 255, 255, 0);
+    }
 }
 </style>

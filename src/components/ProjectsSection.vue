@@ -1,16 +1,18 @@
 <template>
-  <div class="grid grid-cols-12 gap-14 p-16 bg-gradient-to-r from-slate-50 to-gray-200">
-    <template v-for="p in projects">
-      <ProjectCard
-          :bg="p.bg"
-          :col="p.col"
-          :img="p.img"
-          :name="p.name"
-          :id="p.id"
-          :stack="p.stack"
-      >
-      </ProjectCard>
-    </template>
+  <div class="bg-gray-50 w-full flex justify-center flex-wrap ">
+    <div class="lg:container md:gap-6 2xl:gap-8 lg:items-center p-6 xl:my-16 grid grid-cols-12">
+      <template v-for="p in projects">
+        <ProjectCard
+            :bg="p.bg"
+            :col="p.col"
+            :img="p.img"
+            :name="p.name"
+            :id="p.id"
+            :stack="p.stack"
+        >
+        </ProjectCard>
+      </template>
+    </div>
   </div>
 </template>
 <script>
