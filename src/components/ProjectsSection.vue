@@ -21,7 +21,8 @@ import projectsData from "../data/projects.json";
 export default {
   name: 'ProjectsSection',
   data: () => ({
-    projects: projectsData
+    //projects: projectsData
+    projects: []
   }),
   components: {ProjectCard}
 }
