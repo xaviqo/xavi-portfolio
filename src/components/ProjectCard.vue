@@ -8,7 +8,7 @@
           <transition name="fade" mode="out-in">
             <img
                 :key="currentImg"
-                :src="'../src/assets/projects/' + currentImg + '.jpg'"
+                :src="getImgUrl(currentImg)"
                 :alt="project.name"
                 class="max-h-[400px] shadow-lg"
             >
@@ -95,6 +95,9 @@ export default {
             :'order-1';
       }
     },
+    getImgUrl(img) {
+      return new URL('../assets/'+img+'.jpg',import.meta.url).href;
+    }
   },
   props: {
     project: {
