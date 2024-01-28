@@ -57,7 +57,10 @@
         :class="isScrolled ? 'hidden' : 'hidden xl:inline xl:fixed bottom-0 mb-8'"
     >
       <div>
-        <button class="animate-bounce border border-gray-800 hover:border-gray-300 rounded-full p-2">
+        <button
+            class="animate-bounce border border-gray-800 hover:border-gray-300 rounded-full p-2"
+            @click="scrollToProjects"
+        >
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M23.245 4l-11.245 14.374-11.219-14.374-.781.619 12 15.381 12-15.391-.755-.609z"/></svg>
         </button>
       </div>
@@ -91,6 +94,17 @@ export default {
       const screenHeight = window.innerHeight;
       const yPercentage = (window.scrollY / screenHeight) * 100;
       this.isScrolled = (yPercentage > 5);
+    },
+    scrollToProjects(){
+      const targetElement = document.getElementById('projects');
+      console.log(targetElement)
+      if (targetElement) {
+        const targetPosition = targetElement.offsetTop + 80;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
     }
   },
   created() {

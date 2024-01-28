@@ -2,20 +2,19 @@
     <HeadNavbar />
     <LandingHero />
     <ProjectsSection />
-  <div class="fixed bg-gradient-to-b bottom-0 from-transparent to-white/40 w-full z-30 h-12">
-
-  </div>
+    <ContactForm />
+    <SiteFooter />
 </template>
 <script>
-import {defineComponent} from "vue";
 import HeadNavbar from "./components/HeadNavbar.vue";
 import LandingHero from "./components/LandingHero.vue";
-import XaviCard from "./components/ProjectCard.vue";
 import ProjectsSection from "./components/ProjectsSection.vue";
+import ContactForm from "./components/ContactForm.vue";
+import SiteFooter from "./components/SiteFooter.vue";
 
-export default defineComponent({
-  components: {ProjectsSection, XaviCard, LandingHero, HeadNavbar}
-})
+export default {
+  components: {SiteFooter, ContactForm, ProjectsSection, LandingHero, HeadNavbar}
+}
 </script>
 
 <style scoped>

@@ -18,12 +18,9 @@
           <p class="mb-6 tracking-wide md:text-xl">
             I'm a full-stack developer living in Barcelona, Spain, with a strong preference for Vue.js, Spring Boot, and the Linux ecosystem.
           </p>
-          <div class="max-w-[235px] ">
+          <div class="max-w-[235px]">
             <SocialMedia font-size="text-3xl"/>
           </div>
-          <!--      <div>
-                  Tech Stack | VueJS, SpringBoot, SQL...
-                </div>-->
         </div>
       </div>
       <!--photo-->
