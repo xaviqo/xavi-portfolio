@@ -1,8 +1,15 @@
 <template>
   <div>
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-      <p class="mb-8 lg:mb-16 font-bold text-center text-gray-700 sm:text-xl">If you want to contact me for any question, you can use this form or contact me through
-        <a href="https://www.linkedin.com/in/xaviqo/" target="_blank" class="underline">Linkedin</a> or <a href="https://github.com/xaviqo" target="_blank" class="underline">GitHub</a>. Thank you very much!</p>
+      <p class="mb-8 lg:mb-16 font-bold text-center sm:text-xl">
+        <span v-if="sent" class="text-green-800">
+          Thank you for sending your message, I will get back to you as soon as possible!
+        </span>
+        <span v-else class="text-gray-700">
+          If you want to contact me for any question, you can use this form or contact me through
+          <a href="https://www.linkedin.com/in/xaviqo/" target="_blank" class="underline">Linkedin</a> or <a href="https://github.com/xaviqo" target="_blank" class="underline">GitHub</a>. Thank you very much!
+        </span>
+      </p>
       <form action="#" class="space-y-8">
         <div>
           <label for="email" class="block mb-2">Your email</label>
@@ -37,9 +44,11 @@
 export default {
   name: 'ContactForm',
   data: () => ({
+    sent: false,
+    url: 'https://api-mailer.xavi.tech',
     token: null,
-    tokenEp: 'https://api-mailer.xavi.tech/api/get_token',
-    sendEp: 'https://api-mailer.xavi.tech/api/send',
+    tokenEp: '/api/get_token',
+    sendEp: '/api/send',
     msg: {
       sender: '',
       msg: '',
@@ -48,20 +57,29 @@ export default {
   }),
   methods: {
     prepare(){
-      fetch(this.tokenEp, { method: 'GET', headers: {'Content-Type': 'application/json'}})
-          .then( res => this.send(res.data.token) )
+      fetch(this.url+this.tokenEp, { method: 'GET', headers: {'Content-Type': 'application/json'}})
+          .then( res => {
+            if (res.ok) return res.json()
+          })
+          .then( data => this.send(data.token) )
           .catch(error => console.error('Error fetching token:', error));
 
     },
     send(token){
-      console.log(token)
       this.msg.token = token;
-      fetch(this.sendEp, {
+      fetch(this.url+this.sendEp, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(this.msg)
       })
-      .then( res => console.log(res.data))
+      .then( (res) => {
+        this.msg = {
+          sender: '',
+          msg: '',
+          token: null
+        };
+        this.sent = true;
+      })
       .catch(error => console.error('Error sending mail:', error));
     }
   }
