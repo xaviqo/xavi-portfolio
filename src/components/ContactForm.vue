@@ -48,7 +48,7 @@ export default {
   }),
   methods: {
     prepare(){
-      fetch(this.tokenEp, { method: 'GET'})
+      fetch(this.tokenEp, { method: 'GET', headers: {'Content-Type': 'application/json'}})
           .then( res => this.send(res.data.token) )
     },
     send(token){
@@ -56,6 +56,7 @@ export default {
       this.msg.token = token;
       fetch(this.sendEp, {
         method: 'POST',
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(this.msg)
       })
       .then( res => console.log(res.data))
