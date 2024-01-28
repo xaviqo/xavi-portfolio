@@ -50,6 +50,8 @@ export default {
     prepare(){
       fetch(this.tokenEp, { method: 'GET', headers: {'Content-Type': 'application/json'}})
           .then( res => this.send(res.data.token) )
+          .catch(error => console.error('Error fetching token:', error));
+
     },
     send(token){
       console.log(token)
@@ -60,6 +62,7 @@ export default {
         body: JSON.stringify(this.msg)
       })
       .then( res => console.log(res.data))
+      .catch(error => console.error('Error sending mail:', error));
     }
   }
 }
