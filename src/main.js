@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {faLinkedinIn, faGithub, faSpotify, faVuejs, faDocker} from "@fortawesome/free-brands-svg-icons";
+import {faLinkedinIn, faGithub, faSpotify, faVuejs, faDocker, faEnvira, faLinux, faJs } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import {faBars, faXmark, faAt, faLaptopCode, faLeaf, faDatabase, faTerminal, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
@@ -20,7 +20,10 @@ library.add(
     faDocker,
     faDatabase,
     faTerminal,
-    faFilePdf
+    faFilePdf,
+    faEnvira,
+    faLinux,
+    faJs
 );
 
 createApp(App)

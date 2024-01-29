@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-wrap justify-between">
+  <div class="flex flex-nowrap justify-between">
     <template v-for="icon in socialMedia">
       <a
           :class="'cursor-pointer hover:text-gray-500 px-3 ' + fontSize"

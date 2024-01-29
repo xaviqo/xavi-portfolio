@@ -34,6 +34,19 @@
                 Download CV
               </button>
             </div>
+            <div class="col-span-3 flex-nowrap mt-8 flex justify-center lg:justify-start">
+              <div
+                  v-for="tec in stack"
+                  style="box-shadow: rgba(0,0,0,0.42) 2px 2px 3px"
+                  :style="'background-color:'+Stack[tec].bg"
+                  class="text-white rounded-2xl pl-1 w-6 h-6 flex justify-center items-center mr-4"
+              >
+                <font-awesome-icon
+                    class="mr-1"
+                    :icon="Stack[tec].icon"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -53,12 +66,19 @@
 <script>
 import SocialMedia from "./SocialMedia.vue";
 import {cloneVNode} from "vue";
+import Stack from "../Stack.js";
 
 export default {
   name: 'LandingHero',
+  computed: {
+    Stack() {
+      return Stack
+    }
+  },
   components: {SocialMedia},
   data: () => ({
-    cv: 'https://xavi.tech/cv-xquinones-24.pdf'
+    cv: 'https://xavi.tech/cv-xquinones-24.pdf',
+    stack: ['springboot','vuejs','sql','nosql','docker','linux','bash']
   }),
   methods: {
     downloadCv(){
