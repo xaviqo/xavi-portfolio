@@ -9,7 +9,7 @@
               Full Stack - Java & VueJS developer
             </div>
             <div class="my-5 md:my-8 border-b-2 border-blue1 w-full" />
-            <div class="w-full grid-cols-2 mb-4 flex flex-wrap justify-between items-center">
+            <div class="w-full grid-cols-2 mb-4 flex flex-wrap lg:flex-nowrap justify-between items-center">
               <div
                   class="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide overflow-hidden blink-typing-animation"
               >
