@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="contact">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <p class="mb-8 lg:mb-16 font-bold text-center sm:text-xl">
         <span v-if="sent" class="text-green-800">
