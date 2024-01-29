@@ -9,10 +9,27 @@
               Full Stack - Java & VueJS developer
             </div>
             <div class="my-5 md:my-8 border-b-2 border-blue1 w-full" />
-            <div
-                class="mb-4 text-xl md:text-2xl lg:text-3xl font-bold tracking-wide overflow-hidden blink-typing-animation"
-            >
-              Hi there! 👋 <span class="inline">I'm Xavi Quiñones.</span>
+            <div class="w-full grid-cols-2 mb-4 flex flex-wrap justify-between items-center">
+              <div
+                  class="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide overflow-hidden blink-typing-animation"
+              >
+                <span>
+                  Hi there! 👋 <span class="inline">I'm Xavi Quiñones.</span>
+                </span>
+              </div>
+              <div class="flex flex-wrap mt-5 xl:mt-0 xl:flex-nowrap justify-end items-end">
+                <div
+                    v-for="tec in stack"
+                    style="box-shadow: rgba(0,0,0,0.42) 2px 2px 3px"
+                    :style="'background-color:'+Stack[tec].bg"
+                    class="text-white rounded-2xl pl-1 w-6 h-6 flex justify-center items-center mr-4"
+                >
+                  <font-awesome-icon
+                      class="mr-1"
+                      :icon="Stack[tec].icon"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <p class="mb-6 tracking-wide md:text-xl">
@@ -33,19 +50,6 @@
                 />
                 Download CV
               </button>
-            </div>
-            <div class="col-span-3 flex-nowrap mt-8 flex justify-center lg:justify-start">
-              <div
-                  v-for="tec in stack"
-                  style="box-shadow: rgba(0,0,0,0.42) 2px 2px 3px"
-                  :style="'background-color:'+Stack[tec].bg"
-                  class="text-white rounded-2xl pl-1 w-6 h-6 flex justify-center items-center mr-4"
-              >
-                <font-awesome-icon
-                    class="mr-1"
-                    :icon="Stack[tec].icon"
-                />
-              </div>
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
   <div class="flex flex-nowrap justify-between">
     <template v-for="icon in socialMedia">
       <a
-          :class="'cursor-pointer hover:text-gray-500 px-3 ' + fontSize"
+          :class="'cursor-pointer hover:text-gray-500 mr-3 ' + fontSize"
           :href="icon.link"
       >
         <font-awesome-icon
