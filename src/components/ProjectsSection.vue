@@ -2,7 +2,7 @@
   <div class="bg-gray-50 w-full flex justify-center flex-wrap" id="projects">
     <div class="lg:container md:gap-6 2xl:gap-8 lg:items-center xl:my-16 grid grid-cols-12">
       <template v-for="(p,i) in projects">
-        <ProjectCard :project="p" :id="i" >
+        <ProjectCard :project="p" :id="i">
           <template v-slot:description>
             <div v-html="p.description"></div>
           </template>
@@ -20,7 +20,7 @@ export default {
       {
         col: 12,
         imgs: ['soulsync-0','soulsync-1','soulsync-2'],
-        name: 'SOULSYNC',
+        name: 'SOULSYNCBOT',
         stack: ['springboot','vuejs','docker','postgresql','bash'],
         repo: 'https://github.com/xaviqo/SoulSyncBot',
         demo: 'https://soulsync.xavi.tech',

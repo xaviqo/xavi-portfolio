@@ -4,7 +4,7 @@ import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {faLinkedinIn, faGithub, faSpotify, faVuejs, faDocker} from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import {faBars, faXmark, faAt, faLaptopCode, faLeaf, faDatabase, faTerminal} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faXmark, faAt, faLaptopCode, faLeaf, faDatabase, faTerminal, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
 
 library.add(
@@ -19,7 +19,8 @@ library.add(
     faLeaf,
     faDocker,
     faDatabase,
-    faTerminal
+    faTerminal,
+    faFilePdf
 );
 
 createApp(App)

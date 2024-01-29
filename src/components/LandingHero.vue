@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-center flex-wrap h-full bg-gray-50">
-    <main class="lg:container lg:h-[72vh] md:gap-6 2xl:gap-8 lg:items-center p-6 xl:my-16 grid grid-cols-12">
+    <main class="lg:container lg:h-[72vh] md:gap-6 2xl:gap-8 lg:items-center p-6 xl:my-16 grid grid-cols-12" >
       <!--hero-->
       <div class="col-span-12 md:col-span-8 w-full">
         <div class="lg:pr-6">
@@ -18,8 +18,22 @@
           <p class="mb-6 tracking-wide md:text-xl">
             I'm a full-stack developer living in Barcelona, Spain, with a strong preference for Vue.js, Spring Boot, and the Linux ecosystem.
           </p>
-          <div class="max-w-[235px]">
-            <SocialMedia font-size="text-3xl"/>
+          <div class="grid grid-cols-3">
+            <div class="col-span-3 sm:col-span-1">
+              <SocialMedia font-size="text-3xl"/>
+            </div>
+            <div class="col-span-3 sm:col-span-2 sm:mt-0 mt-6 flex justify-center sm:justify-end">
+              <button
+                  class="bg-gray-100 p-2 shadow hover:text-gray-600 font-bold text-2xl"
+                  @click="downloadCv()"
+              >
+                <font-awesome-icon
+                    class="text-blue1"
+                    icon="fa-solid fa-file-pdf"
+                />
+                Download CV
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -38,15 +52,21 @@
 </template>
 <script>
 import SocialMedia from "./SocialMedia.vue";
+import {cloneVNode} from "vue";
 
 export default {
   name: 'LandingHero',
   components: {SocialMedia},
   data: () => ({
+    cv: 'https://xavi.tech/cv-xquinones-24.pdf'
   }),
   methods: {
-  },
-  mounted() {
+    downloadCv(){
+      const tempLink = document.createElement('a');
+      tempLink.href = this.cv;
+      tempLink.target = '_blank';
+      tempLink.click();
+    }
   }
 }
 </script>

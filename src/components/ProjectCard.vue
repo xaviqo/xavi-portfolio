@@ -2,23 +2,28 @@
   <div class="col-span-12">
     <div class="grid grid-cols-12 w-full p-10">
         <div
-            class="col-span-12 lg:col-span-8"
+            class="col-span-12 lg:col-span-8 flex flex-wrap"
             :class="getColsCssByIndex(true)"
         >
-          <transition name="fade" mode="out-in">
-            <img
-                :key="currentImg"
-                :src="getImgUrl(currentImg)"
-                :alt="project.name"
-                class="max-h-[400px] shadow-lg"
-            >
-          </transition>
+          <div class="lg:hidden w-full text-5xl font-bold mb-6 mt-4 lg:mt-0 lg:mb-0 md:p-0">
+            {{ project.name }}
+          </div>
+          <div class="md:w-full flex justify-center xl:w-fit">
+            <transition name="fade" mode="out-in">
+              <img
+                  :key="currentImg"
+                  :src="getImgUrl(currentImg)"
+                  :alt="project.name"
+                  class="max-h-[400px] shadow-lg"
+              >
+            </transition>
+          </div>
         </div>
         <div class="col-span-12 lg:col-span-4 flex flex-col justify-between text-xl"
              :class="getColsCssByIndex(false)"
         >
           <div>
-            <div class="w-full text-5xl font-bold mb-4 mt-4 lg:mt-0 py-3 md:p-0">
+            <div class="hidden lg:flex w-full text-5xl font-bold mb-4 mt-4 lg:mt-0 py-3 md:p-0">
               {{ project.name }}
             </div>
             <slot name="description"></slot>
@@ -87,12 +92,15 @@ export default {
       const currentIndex = this.project.imgs.indexOf(this.currentImg);
       this.currentImg = this.project.imgs[(currentIndex + 1) % this.project.imgs.length];
     },
-    getColsCssByIndex(isMainCol){
-      const notMobile = window.innerWidth > 400;
-      if (notMobile && this.id%2!==0) {
-        return isMainCol
-            ?'order-2 flex justify-end'
-            :'order-1';
+    getColsCssByIndex(isImageColumn){
+      //const notMobile = window.innerWidth > 400;
+      const isOdd = this.id%2!==0;
+      if (isImageColumn) {
+        return isOdd
+            ?'lg:order-2 flex justify-end lg:ml-6'
+            :'lg:mr-6';
+      } else {
+        return 'lg:order-1 mt-5 mb-5 md:mt-0 md:mb-0'
       }
     },
     getImgUrl(img) {
